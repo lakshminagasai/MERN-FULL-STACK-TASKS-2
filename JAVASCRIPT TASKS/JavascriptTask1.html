@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task 1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> 
+</head>
+<body>
+    <div class="text-center p-5">
+        <h1 class="mb-3">Reversing a number</h1>
+        <label for="n">Enter a number to Reverse :</label>
+        <input type="number" id="n"/>
+        <br/>
+        <br/>
+        <button class="mt-3 mb-3 p-1" onclick="revNum()">Submit</button>
+        <p>Reverse number :  <span id="demo"></span></p>
+    </div>
+    <script>
+        function revNum(){
+            let num=parseInt(document.getElementById("n").value);
+            let rev=0;
+            while(num>0){
+                let s=num%10;
+                rev=rev*10+s;
+                num=parseInt(num/10);
+            }
+            document.getElementById("demo").innerHTML=rev;
+        }
+    </script>
+</body>
+</html>

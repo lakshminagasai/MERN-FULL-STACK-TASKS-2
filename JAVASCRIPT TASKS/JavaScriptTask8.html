@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task 8</title>   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+   <style>
+    body{
+        width: 950px;     
+    }
+    .bg-container{
+        background-image: linear-gradient(to bottom,#fafabf,#c7309593); 
+        height: 100%;
+        width: 100%;  
+    }
+    .heading{
+        color: blue;
+        font-weight: 700;
+    }
+    th{
+        width: 180px;
+    }
+
+   </style>
+</head>
+<body>
+    <div class="bg-container container p-5 mx-3"style="display: flex; flex-direction: column;justify-content: center; "  >
+       <h1 class="heading text-center " >Registration form</h1>
+        <form action="" class="p-5 form" onsubmit="return validate()">
+            <table class="p-5">
+                <tr>
+                <th><label for="name" class="form-label"> Full Name </label></th>
+                <td><input type="text" class="form-control" name="in"  style="height:25px;" id="name"/></td>
+                <td><span class="mx-2 text-danger error"></span></td>
+                </tr>
+                <tr>
+                <th><label for="lname" class="form-label">Last Name </label> </th>
+                <td><input type="text" name="in"   id="lname" style="height: 25px;" class="form-control"/></td>
+                <td><span class=" mx-2 text-danger error"></span></td>
+                </tr>
+                <tr>
+                <th><label for="mail" class="form-label">Email</label> </th>
+                <td><input type="email" id="mail"  name="in" style="height: 25px;" class="form-control"/></td>
+                <td><span class=" mx-2 text-danger error" ></span></td>
+                </tr>
+                <tr>
+                <th><label for="password" class="form-label"> Password</label></th>
+                <td ><input type="password" name="in"  style="height: 25px;"  id="password" class="form-control pass"/></td>
+                <td><span class=" mx-2 text-danger" id="passerror"></span></td>
+                </tr>
+                <tr>
+                 <th><label for="repassword" class="form-label">Re-enter Password </label></th>
+                 <td ><input type="password" style="height: 25px;"  class="form-control pass" id="repassword"/></td>
+                 <td><span class=" mx-2 text-danger" id="passerror"></span></td>
+                </tr>
+                <tr>
+                <th rowspan="2"><label for="gen" class="form-check-label"> Gender:</label></th>
+                <td ><label for="male"></label><input type="radio" id="male" value="Male"/> Male</label></td>
+               </tr>
+               <tr>
+                <td><label for="female"><input  type="radio"  id="female" value="Female"/>Female</label></td>
+               </tr>
+               <tr>
+                <th><label for="age" class="form-label">Age:</label></th>
+                <td><input  type="number" style="height: 25px;" name="in"  class="form-control" id="age"/></td>
+                <td><span class=" mx-2 text-danger error" id="ageerror"></span></td>
+               </tr>
+               <tr>
+                <th><label for="ph" class="form-label">Phone Number</label></th>
+                <td><input type="number" name="in"  style="height: 25px;" class="form-control" id="ph"/></td>
+                <td><span class=" mx-2 text-danger error"></span></td>
+               </tr>
+                <tr>
+                <th><label for="add" class="form-label">Address</label></th>
+                <td ><textarea id="add" rows="4" name="in"  class="form-control my-3" ></textarea></td>
+                <td><span class=" mx-2 text-danger error"></span></td>
+                </tr>
+                <tr>
+                <th><label for="state" class="form-label"> State</label></th>
+                <td><input   type="text" style="height: 25px;" name="in"  class="form-control" id="state"/></td>
+                <td><span class=" mx-2 text-danger error"></span></td>
+                </tr>
+                <tr>
+                <th><p><label for="country" class="form-label"> Country</p></th>
+                <td ><select name="countries" class="form-select px-5" id="country" >
+                        <option value="Choose your country"> Choose your country  </option>
+                        <option value="india">India</option>
+                        <option value="USA">USA</option>
+                        <option value="Canada">Canada</option>
+                        <option value="France">France</option>
+                        <option value="Black">Belgium</option>
+                        <option value="UK">UK</option>
+                    </select></td>
+                </tr>
+                <tr>
+                <th><label for="lang" class="form-label"> Languages known</label></th>
+                <td><label><input  type="checkbox"  id="lang1"/> English</label>
+                        <label><input  type="checkbox"  id="lang2"/> Kannada </label>
+                        <label><input type="checkbox"  id="lang3"/>  Hindi</label>
+                        <label><input type="checkbox"  id="lang4"/>  Telugu</label>
+                </td>
+                </tr>
+                <tr>
+                   <td colspan="2"><label for="con" class="form-check-label" checked !important >    Hereby I declare all the given details are true</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-right"><label for="con">Log in to <a href="https://ethnus.com/" target="_blank">Ethnus</a> website  </label></td>
+                 </tr>
+            </table>
+            <br/>
+            <div  class="col-12 col-md-12 text-center">
+                <button class="btn btn-danger px-4" style="border-radius: 16px;">Register</button>
+            </div>
+        </form>
+    </div>
+<script>
+    
+    function validate() {
+            var count = true;
+            for (var i = 0; i < 7; i++) {
+                var x = document.getElementsByName("in")[i].value;
+                if (x.length <= 3) {
+                    document.getElementsByClassName("error")[i].innerHTML = "Poor";
+                    document.getElementsByClassName("error")[i].style.color = "red";
+                    document.getElementsByName("in")[i].style.borderColor = "red";
+                    document.getElementsByName("in")[i].style.borderWidth = "1px";
+                    count = false;
+                } else {
+                    document.getElementsByClassName("error")[i].innerHTML = "Good";
+                    document.getElementsByClassName("error")[i].style.color = "rgb(5, 205, 5)";
+                    document.getElementsByName("in")[i].style.borderColor = "rgb(5, 205, 5)";
+                    document.getElementsByName("in")[i].style.borderWidth = "1px";
+                }
+            }
+            return count;
+        }
+        function passwordCheck() {
+            var Pass = document.getElementsByClassName("pass")[0].value;
+            var RePass = document.getElementsByClassName("pass")[1].value;
+            if (Pass === RePass) {
+                document.getElementById("passerror").innerText = "Good and Matching";
+                document.getElementById("passerror").style.color = "rgb(5, 205, 5)";
+                document.getElementsByClassName("pass")[1].style.borderColor = "rgb(5, 205, 5)";
+                document.getElementsByClassName("pass")[1].style.borderWidth = "1px";
+            } else {
+                document.getElementById("passerror").innerText = "Poor or Mismatch";
+                document.getElementById("passerror").style.color = "red";
+                document.getElementsByClassName("pass")[1].style.borderColor = "red";
+                document.getElementsByClassName("pass")[1].style.borderWidth = "1px";       
+            }
+        }
+    
+</script>
+
+</body>
+</html>
